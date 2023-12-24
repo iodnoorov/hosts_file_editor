@@ -5,6 +5,8 @@ Just simple pet project for learning python and Qt6.
 
 ## Implemented functionality
 
+### Release 0.1
+
 1. Simple GUI with pyQt6
 2. Adding new urls to hosts file (with 127.0.0.1)
 
