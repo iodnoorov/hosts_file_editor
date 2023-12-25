@@ -15,7 +15,7 @@ Just simple pet project for learning python and Qt6.
 2. Manual adding custom IP address (if blank its add 127.0.0.1 by default)
 
 ## Plans
-
+- Refactor to OOP and MVC pattern
 - ~~Add checkup for input text (must be url)~~
 - ~~Add manual IP address adding~~
 - Work with comments (adding, reading)
