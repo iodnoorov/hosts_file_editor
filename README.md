@@ -1,6 +1,5 @@
 # Simple Hosts File editor
 
-----
 Just simple pet project for learning python and Qt6.
 
 ## Implemented functionality
@@ -15,7 +14,7 @@ Just simple pet project for learning python and Qt6.
 2. Manual adding custom IP address (if blank its add 127.0.0.1 by default)
 
 ## Plans
-- Refactor to OOP and MVC pattern
+- Refactor to OOP and MVC pattern (It's not necessary to use MVC and OOP here, but for learning purposes)
 - ~~Add checkup for input text (must be url)~~
 - ~~Add manual IP address adding~~
 - Work with comments (adding, reading)
