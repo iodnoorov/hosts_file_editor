@@ -2,6 +2,7 @@ import sys
 from PyQt6.QtWidgets import QApplication, QMainWindow
 import design
 from urllib.parse import urlparse
+import validators
 
 
 class ExampleApp(QMainWindow, design.Ui_MainWindow):
@@ -12,14 +13,17 @@ class ExampleApp(QMainWindow, design.Ui_MainWindow):
         self.inputUrl.clear()
 
     def hosts_save(self):
-        hosts_file = open('C:\\Windows\\System32\\drivers\\etc\\hosts', "a")
-        url = urlparse(self.inputUrl.text())
-        add_text = '\n127.0.0.1 ' + url.netloc
-        if hosts_file.write(add_text):
-            self.statusText.setText("Status: Success")
+        if validators.url(self.inputUrl.text()) is True:
+            url = urlparse(self.inputUrl.text())
+            add_text = '\n127.0.0.1 ' + url.netloc
+            hosts_file = open('C:\\Windows\\System32\\drivers\\etc\\hosts', "a")
+            if hosts_file.write(add_text):
+                self.statusText.setText("Status: Success")
+            else:
+                self.statusText.setText("Status: Save error")
+            hosts_file.close()
         else:
-            self.statusText.setText("Status: Error")
-        hosts_file.close()
+            self.statusText.setText("Not url")
 
 
 def main():
