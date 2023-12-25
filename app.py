@@ -1,49 +1,65 @@
 import sys
-from PyQt6.QtWidgets import QApplication, QMainWindow
-import design
-from urllib.parse import urlparse
-import validators
+from config import config
+from PyQt6.QtCore import QTranslator
+from PyQt6.QtWidgets import QApplication, QMainWindow, QDialog
+from controller.actionsController import actionsController
+from model.ruleModel import ruleModel
+from view.add_rule import Ui_AddRuleWindow
+from view.design import Ui_HostsEditor
+from view.about import Ui_creditsDialog
 
 
-class ExampleApp(QMainWindow, design.Ui_MainWindow):
+class HostsApp(QMainWindow, Ui_HostsEditor):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-        self.btnAdd.clicked.connect(self.hosts_save)
-        self.inputUrl.clear()
+        translator = QTranslator()
+        translator.load('translations\\design_' + config.LANGUAGE + '.qm')
+        _app = QApplication.instance()
+        _app.installTranslator(translator)
+        self.retranslateUi(self)
+        # buttons with popups
+        self.infoBtn.clicked.connect(lambda: self.information())
+        self.addBtn.clicked.connect(lambda: self.add_rule())
 
-    def validate_input_data(self):
-        url = self.inputUrl.text()
-        ip = self.inputIp.text()
-        if validators.url(url) is True \
-                and (validators.ipv4(ip) is True
-                     or validators.ipv6(ip) is True
-                     or not self.inputIp.text()):
-            return True
-        else:
-            return False
+    def information(self):
+        InfoDialog(self).exec()
 
-    def hosts_save(self):
-        ip = self.inputIp.text()
-        url = self.inputUrl.text()
-        if self.validate_input_data():
-            if not ip:
-                ip = '127.0.0.1'
-            url = urlparse(url)
-            add_text = '\n' + ip + ' ' + url.netloc.replace("www.", "", 1)
-            hosts_file = open('C:\\Windows\\System32\\drivers\\etc\\hosts', "a")
-            if hosts_file.write(add_text):
-                self.statusText.setText("Status: Success")
-            else:
-                self.statusText.setText("Status: Save error")
-            hosts_file.close()
-        else:
-            self.statusText.setText("Validation error")
+    def add_rule(self):
+        addWindow(self).show()
+
+
+class addWindow(QMainWindow, Ui_AddRuleWindow):
+    def __init__(self, parent=None):
+        super(addWindow, self).__init__(parent)
+        self.setupUi(self)
+        translator = QTranslator()
+        translator.load('translations\\addrule_' + config.LANGUAGE + '.qm')
+        _app = QApplication.instance()
+        _app.installTranslator(translator)
+        self.retranslateUi(self)
+
+
+class InfoDialog(QDialog, Ui_creditsDialog):
+    def __init__(self, parent=None):
+        super(InfoDialog, self).__init__(parent)
+        self.setupUi(self)
+        translator = QTranslator()
+        translator.load('translations\\about_' + config.LANGUAGE + '.qm')
+        _app = QApplication.instance()
+        _app.installTranslator(translator)
+        self.retranslateUi(self)
+        self.pushButton.clicked.connect(self.btnClosed)
+
+    def btnClosed(self):
+        self.close()
 
 
 def main():
     app = QApplication(sys.argv)
-    window = ExampleApp()
+    model = ruleModel()
+    window = HostsApp()
+    actionsController(model, window)
     window.show()
     app.exec()
 
