@@ -10,10 +10,14 @@ Just simple pet project for learning python and Qt6.
 1. Simple GUI with pyQt6
 2. Adding new urls to hosts file (with 127.0.0.1)
 
+### Release 0.2
+1. URL validation
+2. Manual adding custom IP address (if blank its add 127.0.0.1 by default)
+
 ## Plans
 
-- Add checkup for input text (must be url)
-- Add manual IP address adding
+- ~~Add checkup for input text (must be url)~~
+- ~~Add manual IP address adding~~
 - Work with comments (adding, reading)
 - Linux and macOS builds.
 - Need to do checks for hosts file's folder, not only in standard folders. (For all OS)

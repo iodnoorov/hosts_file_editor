@@ -11,18 +11,19 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def __init__(self):
+        self.statusText = None
         self.centralwidget = None
         self.btnAdd = None
         self.inputUrl = None
         self.label = None
-        self.statusText = None
+        self.inputIp = None
 
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(300, 100)
-        MainWindow.setMinimumSize(QtCore.QSize(275, 100))
-        MainWindow.setMaximumSize(QtCore.QSize(300, 100))
-        MainWindow.setBaseSize(QtCore.QSize(275, 100))
+        MainWindow.resize(400, 100)
+        MainWindow.setMinimumSize(QtCore.QSize(400, 100))
+        MainWindow.setMaximumSize(QtCore.QSize(400, 100))
+        MainWindow.setBaseSize(QtCore.QSize(400, 100))
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.btnAdd = QtWidgets.QPushButton(parent=self.centralwidget)
@@ -34,7 +35,7 @@ class Ui_MainWindow(object):
         self.btnAdd.setFlat(False)
         self.btnAdd.setObjectName("btnAdd")
         self.inputUrl = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.inputUrl.setGeometry(QtCore.QRect(10, 30, 282, 21))
+        self.inputUrl.setGeometry(QtCore.QRect(190, 30, 201, 21))
         self.inputUrl.setFrame(False)
         self.inputUrl.setObjectName("inputUrl")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
@@ -43,7 +44,7 @@ class Ui_MainWindow(object):
         self.label.setScaledContents(False)
         self.label.setObjectName("label")
         self.statusText = QtWidgets.QLabel(parent=self.centralwidget)
-        self.statusText.setGeometry(QtCore.QRect(170, 60, 100, 31))
+        self.statusText.setGeometry(QtCore.QRect(190, 60, 281, 31))
         self.statusText.setMinimumSize(QtCore.QSize(100, 0))
         self.statusText.setBaseSize(QtCore.QSize(100, 0))
         self.statusText.setAutoFillBackground(False)
@@ -51,6 +52,11 @@ class Ui_MainWindow(object):
         self.statusText.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignTop)
         self.statusText.setWordWrap(True)
         self.statusText.setObjectName("statusText")
+        self.inputIp = QtWidgets.QLineEdit(parent=self.centralwidget)
+        self.inputIp.setGeometry(QtCore.QRect(10, 30, 171, 21))
+        self.inputIp.setFrame(False)
+        self.inputIp.setClearButtonEnabled(False)
+        self.inputIp.setObjectName("inputIp")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -58,8 +64,9 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Блокировка сайта"))
-        self.btnAdd.setText(_translate("MainWindow", "Добавить"))
-        self.inputUrl.setPlaceholderText(_translate("MainWindow", "Вставьте ссылку"))
-        self.label.setText(_translate("MainWindow", "Добавление ссылки в hosts файл (маска 8.8.8.8)"))
-        self.statusText.setText(_translate("MainWindow", "Status: On hold"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Add hosts rule"))
+        self.btnAdd.setText(_translate("MainWindow", "ADD"))
+        self.inputUrl.setPlaceholderText(_translate("MainWindow", "URL"))
+        self.label.setText(_translate("MainWindow", "Add rule to hosts file"))
+        self.statusText.setText(_translate("MainWindow", "Status: On hold, wait for user\'s action"))
+        self.inputIp.setPlaceholderText(_translate("MainWindow", "IP address 127.0.0.1 by default"))
