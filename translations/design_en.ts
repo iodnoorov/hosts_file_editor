@@ -11,52 +11,52 @@
     <message>
         <location filename="design.py" line="77"/>
         <source>Add new rule</source>
-        <translation type="unfinished"></translation>
+        <translation>Add new rule</translation>
     </message>
     <message>
         <location filename="design.py" line="78"/>
         <source>Edit rule</source>
-        <translation type="unfinished"></translation>
+        <translation>Edit rule</translation>
     </message>
     <message>
         <location filename="design.py" line="79"/>
         <source>Delete rule</source>
-        <translation type="unfinished"></translation>
+        <translation>Delete rule</translation>
     </message>
     <message>
         <location filename="design.py" line="80"/>
         <source>Schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Schedule</translation>
     </message>
     <message>
         <location filename="design.py" line="81"/>
         <source>Import/Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Import/Export</translation>
     </message>
     <message>
         <location filename="design.py" line="82"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Settings</translation>
     </message>
     <message>
         <location filename="design.py" line="83"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Exit</translation>
     </message>
     <message>
         <location filename="design.py" line="84"/>
         <source>About</source>
-        <translation type="unfinished"></translation>
+        <translation>About</translation>
     </message>
     <message>
         <location filename="design.py" line="85"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Reset</translation>
     </message>
     <message>
         <location filename="design.py" line="86"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Save</translation>
     </message>
 </context>
 </TS>

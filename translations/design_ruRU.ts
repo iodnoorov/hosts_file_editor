@@ -11,52 +11,52 @@
     <message>
         <location filename="design.py" line="77"/>
         <source>Add new rule</source>
-        <translation type="unfinished">Lj,fdbnm</translation>
+        <translation>Добавить правило</translation>
     </message>
     <message>
         <location filename="design.py" line="78"/>
         <source>Edit rule</source>
-        <translation type="unfinished"></translation>
+        <translation>Изменить</translation>
     </message>
     <message>
         <location filename="design.py" line="79"/>
         <source>Delete rule</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить</translation>
     </message>
     <message>
         <location filename="design.py" line="80"/>
         <source>Schedule</source>
-        <translation type="unfinished"></translation>
+        <translation>Расписание</translation>
     </message>
     <message>
         <location filename="design.py" line="81"/>
         <source>Import/Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Импорт/Экспорт</translation>
     </message>
     <message>
         <location filename="design.py" line="82"/>
         <source>Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <location filename="design.py" line="83"/>
         <source>Exit</source>
-        <translation type="unfinished"></translation>
+        <translation>Выход</translation>
     </message>
     <message>
         <location filename="design.py" line="84"/>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>О программе</translation>
     </message>
     <message>
         <location filename="design.py" line="85"/>
         <source>Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Сбросить</translation>
     </message>
     <message>
         <location filename="design.py" line="86"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранить</translation>
     </message>
 </context>
 </TS>
